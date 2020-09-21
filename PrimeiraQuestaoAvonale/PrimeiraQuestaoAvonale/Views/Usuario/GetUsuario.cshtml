@@ -1,0 +1,19 @@
+﻿@model PrimeiraQuestaoAvonale.Models.MeusRepositoriosViewModel
+
+@{
+    ViewBag.Title = "GetUsuario";
+}
+
+<h2>
+    <p>Pesquisar Usuário</p>
+</h2>
+
+@using (Html.BeginForm("Repositorios", "Usuario", FormMethod.Get))
+{
+    <p>@Html.TextBox("Pesquisar")</p>
+
+    <p><input type="submit" value="Pesquisar" /></p>
+
+    
+}
+

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "ListarFavoritos";
+}
+
+<h2>Meus Favoritos</h2>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ToString()<br />
+                <a href="https://github.com/@item.ToString()" target="_blank"> Ir para Página do Repositório</a>
+            </td>
+        </tr>
+    }
+
+</table>

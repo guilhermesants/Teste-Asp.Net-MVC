@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PrimeiraQuestaoAvonale.Models.MeusRepositoriosViewModel>
+
+@{
+    ViewBag.Title = "Repositorios";
+}
+
+<h2>Detalhes do Usuário</h2>
+
+<table class="table">
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+
+            @Html.ActionLink(item.name, "DetalhesUsuario", "Usuario", new { @name = item.name }, null)
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,54 @@
+﻿@model PrimeiraQuestaoAvonale.Models.DetalheRepositorioViewModel
+
+@{
+    ViewBag.Title = "DetalhesUsuario";
+}
+
+<h2>Detalhes do Repositório</h2>
+
+<div>
+    <b>Nome </b>
+</div>
+<div>
+    <p>@Model.name</p>
+</div>
+
+<div>
+    <b>Descrição</b>
+</div>
+<div>
+    <p>@Model.description</p>
+    @if (Model.description == null)
+    {
+        <p>Nenhuma Descrição</p>
+    }
+</div>
+
+<div>
+    <b>Linguagem</b>
+</div>
+<div>
+    <p>@Model.language</p>
+    @if (Model.language == null)
+    {
+        <p>Linguagem não especificada</p>
+    }
+</div>
+
+<div>
+    <b>Data de Atualização</b>
+</div>
+<div>
+    <p>@Model.updated_at</p>
+</div>
+
+<div>
+    <b>Proprietário</b>
+</div>
+<div>
+    <p>@Model.owner.login</p>
+</div>
+
+@Html.ActionLink("Voltar", "GetUsuario", "Usuario", new { @name = Model.owner.login }, null)<br />
+@Html.ActionLink("Marcar Favorito", "MarcarFavorito", "Usuario", new { @proprietario = Model.owner.login, @nome = Model.name }, null)
+
